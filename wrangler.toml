@@ -1,0 +1,29 @@
+name = "gaming-doh"
+main = "worker.js"
+compatibility_date = "2025-01-15"
+
+[placement]
+mode = "smart"
+
+[observability]
+enabled = true
+
+[vars]
+ENVIRONMENT = "production"
+
+# Replace with your own KV namespace ID
+# Create with: wrangler kv:namespace create PROVIDER_METRICS
+[[kv_namespaces]]
+binding = "PROVIDER_METRICS"
+id = "YOUR_KV_NAMESPACE_ID_HERE"
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+[env.dev]
+name = "gaming-doh-dev"
+vars = { ENVIRONMENT = "development" }
+
+[env.production]
+name = "gaming-doh-prod"
+vars = { ENVIRONMENT = "production" }
