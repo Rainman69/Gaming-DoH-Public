@@ -1,10 +1,21 @@
 const PROVIDERS = [
-  { name: "Cloudflare", url: "https://cloudflare-dns.com/dns-query", w: 35 },
-  { name: "Google", url: "https://dns.google/dns-query", w: 25 },
-  { name: "Quad9", url: "https://dns.quad9.net/dns-query", w: 15 },
-  { name: "OpenDNS", url: "https://doh.opendns.com/dns-query", w: 10 },
-  { name: "AdGuard", url: "https://dns.adguard.com/dns-query", w: 8 },
-  { name: "ControlD", url: "https://freedns.controld.com/p2", w: 7 }
+  { name: "Cloudflare",            url: "https://1.1.1.1/dns-query",        baseWeight: 35, avgLatency: 11 },
+  { name: "Google",                url: "https://dns.google/dns-query",     baseWeight: 28, avgLatency: 15 },
+  { name: "NextDNS",               url: "https://dns.nextdns.io/",          baseWeight: 25, avgLatency: 20 },
+  { name: "Quad9",                 url: "https://dns.quad9.net/dns-query",  baseWeight: 20, avgLatency: 18 },
+  { name: "AdGuard",               url: "https://dns.adguard.com/dns-query",    baseWeight: 10, avgLatency: 22 },
+  { name: "ControlD",              url: "https://dns.controld.com/dns-query",    baseWeight: 5,  avgLatency: 25 },
+  { name: "OpenDNS",               url: "https://doh.opendns.com/dns-query",     baseWeight: 5,  avgLatency: 20 },
+  { name: "Mullvad",               url: "https://doh.mullvad.net/dns-query",     baseWeight: 2,  avgLatency: 30 },
+  // Additional
+  { name: "CleanBrowsing",         url: "https://doh.cleanbrowsing.org/doh/family-filter/", baseWeight: 5,  avgLatency: 50 },
+  { name: "DNS.SB",                url: "https://doh.dns.sb/dns-query",           baseWeight: 5,  avgLatency: 50 },
+  { name: "DNS.WATCH",             url: "https://dns.watch/dns-query",            baseWeight: 5,  avgLatency: 50 },
+  { name: "UncensoredDNS",         url: "https://doh.univers.free.fr/dns-query",  baseWeight: 5,  avgLatency: 50 },
+  { name: "Yandex DNS",            url: "https://dns.yandex.ru/dns-query",        baseWeight: 5,  avgLatency: 50 },
+  { name: "Neustar UltraRecursive", url: "https://doh-us1.ultradns.net/dns-query", baseWeight: 5,  avgLatency: 50 },
+  { name: "SecureDNS",             url: "https://doh.securedns.eu/dns-query",     baseWeight: 5,  avgLatency: 50 },
+  { name: "IBM Quad9",             url: "https://dns9.quad9.net/dns-query",        baseWeight: 5,  avgLatency: 50 }
 ];
 
 const RACING_PROVIDERS = 3;
