@@ -1,0 +1,34 @@
+{
+  "name": "gaming-doh",
+  "version": "5.0.0",
+  "description": "Ultra-compact gaming-optimized DoH proxy with provider racing, KV-backed RTT adaptivity, POST->GET caching, and scheduled warmers",
+  "main": "worker.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:dev": "wrangler deploy --env dev",
+    "deploy:prod": "wrangler deploy --env production",
+    "tail": "wrangler tail",
+    "tail:prod": "wrangler tail --env production",
+    "kv:create": "wrangler kv:namespace create PROVIDER_METRICS",
+    "kv:create:preview": "wrangler kv:namespace create PROVIDER_METRICS --preview"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "dns",
+    "doh",
+    "dns-over-https",
+    "gaming",
+    "low-latency",
+    "racing",
+    "adaptive-routing",
+    "kv",
+    "caching",
+    "failover"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^4.43.0"
+  }
+}
